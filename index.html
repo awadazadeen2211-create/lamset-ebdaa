@@ -522,18 +522,41 @@
     </div>
 </footer>
 
-<a href="https://wa.me/9665XXXXXXXX?text=مرحباً، أرغب في استشارة ديكورات حديثة" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+<a href="https://wa.me/00966558514213?text=مرحباً، أرغب في استشارة ديكورات حديثة" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
 
 <script>
     // قائمة المعرض: استبدل مسارات الصور والفيديو بملفاتك الحقيقية.
     // أضف صورتك أو الفيديو داخل مجلد images مثلاً ثم غيّر الرابط.
     const galleryItems = [
-        { type: "image", src: "https://placehold.co/600x400/e8dcc8/5a4a2e?text=بديل+الرخام", title: "بديل الرخام - فخامة عصرية" },
-        { type: "image", src: "https://placehold.co/600x400/dbd3c6/2c2c2c?text=جبس+بورد", title: "قواطع جبس بورد" },
-        { type: "image", src: "https://placehold.co/600x400/cfc3ae/1e1e1e?text=باركيه", title: "باركيه خشبي" },
-        { type: "video", src: "https://www.w3schools.com/html/mov_bbb.mp4", title: "فيديو تعريفي لأعمال الجبس بورد", isVideo: true },
-        { type: "image", src: "https://placehold.co/600x400/d6cbbc/000000?text=تكسيات+جدارية", title: "تكسيات جدارية ثلاثية الأبعاد" },
-        { type: "image", src: "https://placehold.co/600x400/e3d6c4/3e2a1f?text=فوم+ديكوري", title: "فوم ديكوري فاخر" }
+    {
+        type: "image", 
+        src: "https://i.ibb.co/jPVph5P2/IMG-20260524-115650-374.jpg", 
+        title: "بديل الرخام - فخامة عصرية"
+    },
+    {
+        type: "image", 
+        src: "https://i.ibb.co/YT2rZWvn/IMG-20240702-WA0017.jpg", 
+        title: "جبس بورد - ديكور حديث"
+    },
+    {
+        type: "image", 
+        src: "https://i.ibb.co/mjD50Vw/IMG-20240225-180100-854.jpg", 
+        title: "باركيه - أرضيات فاخرة"
+    },
+        {
+    type: "video",
+    src: "https://files.catbox.moe/cf7vfn.mp4",
+    title: "فيديو - أعمال جبس بورد" },
+        {
+    type: "image", 
+    src: "https://i.ibb.co/g2yDxdk/IMG-20240407-032112-380.jpg", 
+    title: "بديل الرخام- تصميم عصري"
+},
+        {
+    type: "image", 
+    src: "https://i.ibb.co/h1rCrp56/IMG-20240721-191226-842.jpg", 
+    title: "ديكور جبس بورد حديثة - لمسة إبداع"
+},
     ];
 
     const galleryContainer = document.getElementById('galleryGrid');
@@ -588,7 +611,7 @@
             return;
         }
         const text = `مرحباً لمسة إبداع\nالاسم: ${name}\nالهاتف: ${phone}\nالخدمة: ${service}\nالتفاصيل: ${details || "غير محددة"}${fileMsg}\nأرجو التواصل لتقديم عرض سعر.`;
-        const whatsappNumber = "9665XXXXXXXX"; // غيّر الرقم لرقمك الفعلي
+        const whatsappNumber = "00966558514213"; // غيّر الرقم لرقمك الفعلي
         const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(text)}`;
         window.open(url, '_blank');
     });
