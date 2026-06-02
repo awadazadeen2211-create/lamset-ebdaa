@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>لمسة إبداع - ديكورات داخلية حديثة</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Tajawal', 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background-color: #fefcf8;
+            color: #2a2a2a;
+            line-height: 1.5;
+        }
+
+        /* Import Google Font */
+        @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap');
+
+        /* Variables */
+        :root {
+            --primary: #c7a45b;
+            --primary-dark: #a07d41;
+            --secondary: #2c2c2c;
+            --light: #faf7f0;
+            --gray: #6b6b6b;
+            --border: #e5e0d5;
+            --shadow: 0 10px 30px rgba(0,0,0,0.05);
+            --transition: all 0.3s ease;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Header / Navbar */
+        .navbar {
+            background: white;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            background: rgba(255,255,255,0.95);
+        }
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 24px;
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+        .logo {
+            font-size: 1.7rem;
+            font-weight: 800;
+            color: var(--secondary);
+        }
+        .logo span {
+            color: var(--primary);
+        }
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+        }
+        .nav-links a {
+            text-decoration: none;
+            font-weight: 500;
+            color: var(--secondary);
+            transition: var(--transition);
+        }
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        .menu-btn {
+            display: none;
+            font-size: 1.6rem;
+            cursor: pointer;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 12px 28px;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        .btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+        .btn-outline:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* Hero Section with video background placeholder */
+        .hero {
+            background: linear-gradient(135deg, #1e1e1e 0%, #2a2a2a 100%);
+            color: white;
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-video-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.3;
+            pointer-events: none;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 32px;
+            opacity: 0.9;
+        }
+        .badge-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 30px;
+        }
+        .badge {
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(4px);
+            padding: 8px 20px;
+            border-radius: 40px;
+            font-size: 0.9rem;
+        }
+
+        /* Services Grid */
+        .section {
+            padding: 80px 0;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 50px;
+            position: relative;
+        }
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 70px;
+            height: 4px;
+            background: var(--primary);
+            margin: 12px auto 0;
+            border-radius: 4px;
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 30px;
+        }
+        .service-card {
+            background: white;
+            padding: 28px 16px;
+            text-align: center;
+            border-radius: 24px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 1px solid var(--border);
+        }
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 30px rgba(0,0,0,0.1);
+        }
+        .service-card i {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 16px;
+        }
+        .service-card h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+
+        /* Gallery (portfolio) */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 24px;
+        }
+        .gallery-item {
+            background: #f4f1ea;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            cursor: pointer;
+        }
+        .gallery-item img, .gallery-item video {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.4s;
+        }
+        .gallery-item:hover img, .gallery-item:hover video {
+            transform: scale(1.03);
+        }
+        .gallery-caption {
+            padding: 16px;
+            text-align: center;
+            font-weight: 500;
+            background: white;
+        }
+        .video-badge {
+            position: relative;
+        }
+        .video-badge:after {
+            content: "📹";
+            position: absolute;
+            bottom: 12px;
+            right: 12px;
+            background: black;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 20px;
+            font-size: 12px;
+        }
+
+        /* Before/After section (simple slider) */
+        .ba-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+        }
+        .ba-card {
+            flex: 1;
+            min-width: 260px;
+            background: #f2efe8;
+            border-radius: 28px;
+            overflow: hidden;
+            text-align: center;
+            padding-bottom: 20px;
+        }
+        .ba-images {
+            display: flex;
+            gap: 2px;
+        }
+        .ba-images div {
+            flex: 1;
+        }
+        .ba-images img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .ba-card p {
+            margin-top: 12px;
+            font-weight: 600;
+        }
+
+        /* Testimonials */
+        .testi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 30px;
+        }
+        .testi-card {
+            background: white;
+            padding: 28px;
+            border-radius: 28px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+        }
+        .testi-card i {
+            color: var(--primary);
+            font-size: 1.8rem;
+            margin-bottom: 16px;
+        }
+        .testi-text {
+            font-style: normal;
+            margin-bottom: 16px;
+            line-height: 1.6;
+        }
+        .client-name {
+            font-weight: 800;
+        }
+
+        /* Quote form */
+        .quote-form {
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 36px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        input, textarea, select {
+            width: 100%;
+            padding: 14px 18px;
+            border: 1px solid var(--border);
+            border-radius: 28px;
+            font-family: inherit;
+            font-size: 1rem;
+            background: #fff;
+        }
+        textarea {
+            border-radius: 24px;
+            resize: vertical;
+        }
+        label {
+            font-weight: 600;
+            display: block;
+            margin-bottom: 8px;
+        }
+        .whatsapp-float {
+            position: fixed;
+            bottom: 28px;
+            left: 28px;
+            background: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            transition: 0.2s;
+            z-index: 999;
+        }
+        .whatsapp-float:hover {
+            transform: scale(1.05);
+            background: #128C7E;
+        }
+        footer {
+            background: #1f1f1f;
+            color: #ccc;
+            text-align: center;
+            padding: 40px 0;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 800px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                background: white;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                padding: 30px;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            }
+            .nav-links.active {
+                display: flex;
+            }
+            .menu-btn {
+                display: block;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .section {
+                padding: 50px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="navbar">
+    <div class="nav-container">
+        <div class="logo">لمسة <span>إبداع</span></div>
+        <div class="menu-btn" id="menuBtn"><i class="fas fa-bars"></i></div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home">الرئيسية</a></li>
+            <li><a href="#services">خدماتنا</a></li>
+            <li><a href="#gallery">معرض الأعمال</a></li>
+            <li><a href="#beforeafter">قبل وبعد</a></li>
+            <li><a href="#contact">طلب عرض سعر</a></li>
+        </ul>
+    </div>
+</div>
+
+<!-- Hero -->
+<section id="home" class="hero">
+    <!-- ضع هنا فيديو الخلفية إذا أردت (اختياري) مسار فيديو -->
+    <video class="hero-video-bg" autoplay muted loop playsinline poster="https://placehold.co/1920x1080/2a2a2a/white?text=Interior+Design">
+        <source src="#" type="video/mp4">
+        <!-- يمكنك إضافة رابط فيديو لاحقًا بدلاً من # -->
+    </video>
+    <div class="container hero-content">
+        <h1>لمسة إبداع للديكورات الحديثة</h1>
+        <p>نحول المساحات إلى تحف فنية بخامات عصرية وجودة لا تضاهى</p>
+        <a href="#contact" class="btn">اطلب عرض سعر مجاني</a>
+        <div class="badge-list">
+            <span class="badge">بديل الشيبورد</span>
+            <span class="badge">بديل الرخام</span>
+            <span class="badge">تكسيات جدارية</span>
+            <span class="badge">ورق حائط</span>
+            <span class="badge">جبس بورد</span>
+            <span class="badge">شاشات وقواطع</span>
+            <span class="badge">باركيه وفوم</span>
+        </div>
+    </div>
+</section>
+
+<!-- Services -->
+<section id="services" class="section">
+    <div class="container">
+        <h2 class="section-title">خدماتنا الإبداعية</h2>
+        <div class="services-grid">
+            <div class="service-card"><i class="fas fa-border-all"></i><h3>بديل الشيبورد</h3></div>
+            <div class="service-card"><i class="fas fa-gem"></i><h3>بديل الرخام</h3></div>
+            <div class="service-card"><i class="fas fa-palette"></i><h3>تكسيات جدارية</h3></div>
+            <div class="service-card"><i class="fas fa-paint-roller"></i><h3>ورق حائط</h3></div>
+            <div class="service-card"><i class="fas fa-chalkboard"></i><h3>جبس بورد</h3></div>
+            <div class="service-card"><i class="fas fa-tv"></i><h3>شاشات وقواطع</h3></div>
+            <div class="service-card"><i class="fas fa-wood"></i><h3>باركيه</h3></div>
+            <div class="service-card"><i class="fas fa-cubes"></i><h3>فوم ديكوري</h3></div>
+        </div>
+    </div>
+</section>
+
+<!-- Gallery (صور وفيديو) -->
+<section id="gallery" class="section" style="background: var(--light);">
+    <div class="container">
+        <h2 class="section-title">معرض أعمالنا</h2>
+        <div class="gallery-grid" id="galleryGrid">
+            <!-- سيتم ملء المعرض بواسطة JS، مع صور وفيديو افتراضية يمكنك استبدالها بصورك الفعلية -->
+        </div>
+        <div style="text-align: center; margin-top: 30px;">
+            <p class="badge" style="background: var(--primary); color:white;">📸 لديك صور وفيديو؟ استبدل المسارات في المصفوفة داخل كود JS</p>
+        </div>
+    </div>
+</section>
+
+<!-- Before / After Section -->
+<section id="beforeafter" class="section">
+    <div class="container">
+        <h2 class="section-title">قبل & بعد</h2>
+        <div class="ba-grid" id="baGrid">
+            <!-- يتم إنشاء نماذج قبل وبعد باستخدام JS -->
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials (شهادات) -->
+<section class="section" style="background: var(--light);">
+    <div class="container">
+        <h2 class="section-title">آراء عملائنا</h2>
+        <div class="testi-grid">
+            <div class="testi-card"><i class="fas fa-quote-right"></i><div class="testi-text">"لمسة إبداع غيروا منزلي بالكامل. جودة وخامات ممتازة"</div><div class="client-name">- أحمد م.</div></div>
+            <div class="testi-card"><i class="fas fa-quote-right"></i><div class="testi-text">"التنفيذ كان سريع واحترافي. أنصح بالتعامل معهم بقوة"</div><div class="client-name">- سارة خ.</div></div>
+            <div class="testi-card"><i class="fas fa-quote-right"></i><div class="testi-text">"دقة في التفاصيل وأسعار مناسبة. شكراً لكم"</div><div class="client-name">- محمد ر.</div></div>
+        </div>
+    </div>
+</section>
+
+<!-- Request Quote -->
+<section id="contact" class="section">
+    <div class="container">
+        <h2 class="section-title">اطلب عرض سعرك الآن</h2>
+        <div class="quote-form">
+            <form id="quoteForm">
+                <div class="form-group"><label>الاسم كاملاً</label><input type="text" id="name" required></div>
+                <div class="form-group"><label>رقم الهاتف (واتساب)</label><input type="tel" id="phone" required></div>
+                <div class="form-group"><label>نوع الخدمة</label><select id="serviceType"><option>بديل الشيبورد</option><option>بديل الرخام</option><option>جبس بورد</option><option>تكسيات جدارية</option><option>باركيه وفوم</option><option>أخرى</option></select></div>
+                <div class="form-group"><label>تفاصيل المشروع</label><textarea rows="3" id="details" placeholder="المساحة، الألوان المفضلة، إرفاق صور لاحقاً..."></textarea></div>
+                <div class="form-group"><label>📎 يمكنك رفع ملف (صورة/فيديو):</label><input type="file" id="fileUpload" accept="image/*,video/*"></div>
+                <button type="button" class="btn" id="sendQuoteBtn">إرسال الطلب عبر واتساب</button>
+            </form>
+            <p class="note" style="font-size:12px; margin-top:16px;">سيتم تحويلك إلى واتساب لاستكمال التفاصيل والصور</p>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <p>© 2025 لمسة إبداع للديكورات الحديثة | جميع الحقوق محفوظة</p>
+        <p style="margin-top: 10px;">📞 اتصل بنا: 05XXXXXXXX | 📍 نخدم جميع مناطق المملكة</p>
+    </div>
+</footer>
+
+<a href="https://wa.me/9665XXXXXXXX?text=مرحباً، أرغب في استشارة ديكورات حديثة" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+<script>
+    // قائمة المعرض: استبدل مسارات الصور والفيديو بملفاتك الحقيقية.
+    // أضف صورتك أو الفيديو داخل مجلد images مثلاً ثم غيّر الرابط.
+    const galleryItems = [
+        { type: "image", src: "https://placehold.co/600x400/e8dcc8/5a4a2e?text=بديل+الرخام", title: "بديل الرخام - فخامة عصرية" },
+        { type: "image", src: "https://placehold.co/600x400/dbd3c6/2c2c2c?text=جبس+بورد", title: "قواطع جبس بورد" },
+        { type: "image", src: "https://placehold.co/600x400/cfc3ae/1e1e1e?text=باركيه", title: "باركيه خشبي" },
+        { type: "video", src: "https://www.w3schools.com/html/mov_bbb.mp4", title: "فيديو تعريفي لأعمال الجبس بورد", isVideo: true },
+        { type: "image", src: "https://placehold.co/600x400/d6cbbc/000000?text=تكسيات+جدارية", title: "تكسيات جدارية ثلاثية الأبعاد" },
+        { type: "image", src: "https://placehold.co/600x400/e3d6c4/3e2a1f?text=فوم+ديكوري", title: "فوم ديكوري فاخر" }
+    ];
+
+    const galleryContainer = document.getElementById('galleryGrid');
+    function loadGallery() {
+        if(galleryContainer) {
+            galleryContainer.innerHTML = '';
+            galleryItems.forEach(item => {
+                const div = document.createElement('div');
+                div.className = 'gallery-item';
+                if(item.type === 'video' || item.isVideo) {
+                    div.innerHTML = `<video controls src="${item.src}" poster="https://placehold.co/600x400/222/fff?text=فيديو"></video><div class="gallery-caption">${item.title}</div>`;
+                } else {
+                    div.innerHTML = `<img loading="lazy" src="${item.src}" alt="${item.title}"><div class="gallery-caption">${item.title}</div>`;
+                }
+                galleryContainer.appendChild(div);
+            });
+        }
+    }
+
+    // قبل وبعد - صور توضيحية
+    const baItems = [
+        { before: "https://placehold.co/600x400/9e8e7a/ffffff?text=قبل", after: "https://placehold.co/600x400/c7a45b/ffffff?text=بعد", title: "غرفة معيشة" },
+        { before: "https://placehold.co/600x400/9e8e7a/ffffff?text=قبل", after: "https://placehold.co/600x400/c7a45b/ffffff?text=بعد", title: "قاطع جبس بورد" }
+    ];
+    const baContainer = document.getElementById('baGrid');
+    if(baContainer) {
+        baContainer.innerHTML = '';
+        baItems.forEach(ba => {
+            const card = document.createElement('div');
+            card.className = 'ba-card';
+            card.innerHTML = `
+                <div class="ba-images"><div><img src="${ba.before}" alt="قبل"></div><div><img src="${ba.after}" alt="بعد"></div></div>
+                <p>✨ ${ba.title}</p>
+            `;
+            baContainer.appendChild(card);
+        });
+    }
+
+    // whatsapp form
+    document.getElementById('sendQuoteBtn')?.addEventListener('click', function() {
+        const name = document.getElementById('name').value.trim();
+        const phone = document.getElementById('phone').value.trim();
+        const service = document.getElementById('serviceType').value;
+        const details = document.getElementById('details').value.trim();
+        const fileInput = document.getElementById('fileUpload');
+        let fileMsg = '';
+        if(fileInput.files.length > 0) {
+            fileMsg = `\n📎 تم اختيار ملف: ${fileInput.files[0].name}`;
+        }
+        if(!name || !phone) {
+            alert("يرجى إدخال الاسم ورقم الهاتف");
+            return;
+        }
+        const text = `مرحباً لمسة إبداع\nالاسم: ${name}\nالهاتف: ${phone}\nالخدمة: ${service}\nالتفاصيل: ${details || "غير محددة"}${fileMsg}\nأرجو التواصل لتقديم عرض سعر.`;
+        const whatsappNumber = "9665XXXXXXXX"; // غيّر الرقم لرقمك الفعلي
+        const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(text)}`;
+        window.open(url, '_blank');
+    });
+
+    // mobile menu
+    const menuBtn = document.getElementById('menuBtn');
+    const navLinks = document.getElementById('navLinks');
+    if(menuBtn) {
+        menuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    }
+    loadGallery();
+</script>
+
+<!-- تنبيه: استبدل كل الصور الوهمية (placehold.co) بصور أعمالك الحقيقية وضع فيديوهاتك داخل مجلد. 
+     غير رقم الواتساب في الرابط وفي السكريبت -->
+</body>
+</html>
